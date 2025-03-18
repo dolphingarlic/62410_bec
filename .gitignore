@@ -1,0 +1,16 @@
+# Python
+env/
+__pycache__/
+
+# Vivado
+vivado/62410_bec
+62410_bec/62410_bec
+*.log
+*.jou
+*.str
+vivado/src/constraints/.Xil/
+sim_build/
+.Xil/
+
+# Miscellaneous
+.DS_Store
