@@ -15,6 +15,9 @@
 	)
 	(
 		// Users to add ports here
+		// Hardware ports (Andi)
+		input wire [3:0] sw,
+		output wire [3:0] led,
         // DAC output amplitude (Andi)
 		output wire [255:0] amplitude_tdata,
 		output wire amplitude_tvalid,
@@ -58,6 +61,8 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) frequency_hopper_slave_lite_v1_0_S00_AXI_inst (
+	    .sw(sw),
+	    .led(led),
 	    .amplitude_tdata(amplitude_tdata),
 	    .amplitude_tvalid(amplitude_tvalid),
 	    .amplitude_tready(amplitude_tready),

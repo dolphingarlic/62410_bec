@@ -15,6 +15,9 @@
 	)
 	(
 		// Users to add ports here
+		// Hardware ports (Andi)
+		input wire [3:0] sw,
+		output wire [3:0] led,
 		// DAC output amplitude (Andi)
 		output wire [255:0] amplitude_tdata,
 		output wire amplitude_tvalid,
@@ -524,7 +527,13 @@
     assign nco_update_en = 6'b000110;
     
     // Assign fixed values for the amplitude
-    assign amplitude_tdata = 256'hFFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF;
+    assign amplitude_tdata = {
+      sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw,
+      sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw,
+      sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw,
+      sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw, sw
+    };
+    assign led = sw;
     assign amplitude_tvalid = 1'b1;
 
 	// User logic ends
