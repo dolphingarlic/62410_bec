@@ -19,7 +19,7 @@
 		input wire [3:0] sw,
 		output wire [3:0] led,
         // DAC output amplitude (Andi)
-		output wire [255:0] amplitude_tdata,
+		output wire [63:0] amplitude_tdata,
 		output wire amplitude_tvalid,
 		input wire amplitude_tready,
 		// NCO frequency hopping (Andi)
