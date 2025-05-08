@@ -19,7 +19,7 @@
 		input wire [3:0] sw,
 		output wire [3:0] led,
 		// DAC output amplitude (Andi)
-		output wire [63:0] amplitude_tdata,
+		output wire [127:0] amplitude_tdata,
 		output wire amplitude_tvalid,
 		input wire amplitude_tready,
 		// NCO frequency hopping (Andi)
@@ -527,7 +527,7 @@
     assign nco_update_en = 6'b000110;
     
     // Assign fixed values for the amplitude
-    assign amplitude_tdata = 64'h7FFF_7FFF_7FFF_7FFF;
+    assign amplitude_tdata = 128'h7FFF_7FFF_7FFF_7FFF_7FFF_7FFF_7FFF_7FFF;
     assign led = sw;
     assign amplitude_tvalid = 1'b1;
 
